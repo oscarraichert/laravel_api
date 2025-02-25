@@ -40,8 +40,6 @@ class PatientsController extends Controller
 
     public function update(Request $request, int $id)
     {
-        var_dump($request);
-
         $patient = Patient::find($id);
 
         if (empty($patient)) {

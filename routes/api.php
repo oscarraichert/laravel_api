@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HealthCheckController;
 use App\Http\Controllers\PatientsController;
+use App\Http\Controllers\PhysicianController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,4 +16,5 @@ Route::get('/health-check', function (HealthCheckController $controller) {
 
 Route::apiResources([
     'patients' => PatientsController::class,
+    'physicians' => PhysicianController::class,
 ]);
