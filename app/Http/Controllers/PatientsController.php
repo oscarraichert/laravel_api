@@ -59,9 +59,10 @@ class PatientsController extends Controller
         $patient = Patient::find($id);
 
         if (empty($patient)) {
-            return response()->json(["message" => "patient id {$id} not found"], 404);
+            return response()->json(["message" => "patient id {$id} not found."], 404);
         }
 
         $patient->delete();
+        return response(null, 204);
     }
 }
