@@ -10,7 +10,7 @@ use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class PatientsController extends Controller
 {
-    public function index(): ResourceCollection
+    public function index()
     {
         return PatientResource::collection(Patient::all());
     }
