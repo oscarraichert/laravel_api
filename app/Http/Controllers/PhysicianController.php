@@ -15,13 +15,13 @@ class PhysicianController extends Controller
 
     public function show(int $id)
     {
-        $patient = Physician::find($id);
+        $physician = Physician::find($id);
 
-        if (empty($patient)) {
-            return response()->json(["message" => "patient id {$id} not found"], 404);
+        if (empty($physician)) {
+            return response()->json(["message" => "physician id {$id} not found"], 404);
         }
 
-        return new PhysicianResource($patient);
+        return new PhysicianResource($physician);
     }
 
     public function store(Request $request)
