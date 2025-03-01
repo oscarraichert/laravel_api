@@ -17,10 +17,6 @@ class PhysicianController extends Controller
     {
         $physician = Physician::find($id);
 
-        if (empty($physician)) {
-            return response()->json(["message" => "physician id {$id} not found"], 404);
-        }
-
         return new PhysicianResource($physician);
     }
 
@@ -51,10 +47,6 @@ class PhysicianController extends Controller
     public function destroy(int $id)
     {
         $physician = Physician::find($id);
-
-        if (empty($physician)) {
-            return response()->json(["message" => "physician id {$id} not found."], 404);
-        }
 
         $physician->delete();
         return response(null, 204);

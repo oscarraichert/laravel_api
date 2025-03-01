@@ -17,10 +17,6 @@ class PatientsController extends Controller
     {
         $patient = Patient::find($id);
 
-        if (empty($patient)) {
-            return response()->json(["message" => "patient id {$id} not found"], 404);
-        }
-
         return new PatientResource($patient);
     }
 
@@ -41,10 +37,6 @@ class PatientsController extends Controller
     {
         $patient = Patient::find($id);
 
-        if (empty($patient)) {
-            return response()->json(["message" => "patient id {$id} not found"], 404);
-        }
-
         $patient->name = $request->name;
         $patient->address = $request->address;
         $patient->phone = $request->phone;
@@ -57,10 +49,6 @@ class PatientsController extends Controller
     public function destroy(int $id)
     {
         $patient = Patient::find($id);
-
-        if (empty($patient)) {
-            return response()->json(["message" => "patient id {$id} not found."], 404);
-        }
 
         $patient->delete();
         return response(null, 204);
