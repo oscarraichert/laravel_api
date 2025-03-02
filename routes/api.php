@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\HealthCheckController;
 use App\Http\Controllers\PatientsController;
 use App\Http\Controllers\PhysicianController;
@@ -17,4 +18,5 @@ Route::get('/health-check', function (HealthCheckController $controller) {
 Route::apiResources([
     'patients' => PatientsController::class,
     'physicians' => PhysicianController::class,
+    'appointments' => AppointmentController::class,
 ]);
