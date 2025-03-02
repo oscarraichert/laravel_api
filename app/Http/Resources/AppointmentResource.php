@@ -20,6 +20,7 @@ class AppointmentResource extends JsonResource
             'id' => $this->id,
             'patient' => new PatientResource(Patient::find($this->patient_id)),
             'physician' => new PhysicianResource(Physician::find($this->physician_id)),
+            'date' => $this->date,
         ];
     }
 }
