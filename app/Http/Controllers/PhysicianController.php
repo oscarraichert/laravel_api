@@ -10,7 +10,7 @@ class PhysicianController extends Controller
 {
     public function index()
     {
-        return PhysicianResource::collection(Physician::get());
+        return PhysicianResource::collection(Physician::get())->collection;
     }
 
     public function show(int $id)

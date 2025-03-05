@@ -10,7 +10,7 @@ class PatientsController extends Controller
 {
     public function index()
     {
-        return PatientResource::collection(Patient::all());
+        return PatientResource::collection(Patient::all())->collection;
     }
 
     public function show(int $id)

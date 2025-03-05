@@ -10,7 +10,7 @@ class AppointmentController extends Controller
 {
     public function index()
     {
-        return AppointmentResource::collection(Appointment::all());
+        return AppointmentResource::collection(Appointment::all())->collection;
     }
 
     public function store(Request $request)
